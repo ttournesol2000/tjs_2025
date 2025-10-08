@@ -1,13 +1,19 @@
 import React from "react";
-import "./Button.css";
+import cmpstyle from './Button.module.css'
 
-const Button = (props) => {
-  console.trace(props);
+const Button = ({style,bgColor,value,type="button"}) => {
+  //console.trace(style);
+  //console.log(props);
   return (
-    <button className="Button" data-testid="Button">
-      {props.value}
+    <button 
+    type={type}
+    className={cmpstyle.Button} 
+    style ={{ ...style, backgroundColor: bgColor }} 
+    data-testid="Button">
+      {value}
     </button>
   );
 };
 
 export default Button;
+  

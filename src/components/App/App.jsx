@@ -5,7 +5,11 @@ const App=() => {
   return (
     <>
     <div>DEMAT Breizh</div>
-    <Button value="Benjamin" />
+    <Button value="Benjamin" style={{backgroundColor:'black'}} />
+    <Button value="Nicolas" />
+    <Button value="Lionel" bgColor="grey" />
+    <Button value="Jean" />
+    <Button value="Louis" bgColor="brown" />
     </>
     
   )
