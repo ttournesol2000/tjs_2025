@@ -5,14 +5,14 @@ const App=() => {
   return (
     <>
     <div>DEMAT Breizh</div>
-    <Button value="Benjamin" style={{backgroundColor:'black'}} />
-    <Button value="Nicolas">
+    <Button children="Benjamin" style={{backgroundColor:'black'}} bgColor="red" />
+    <Button bgColor="grey">
       <div>TOTO</div>
       <div>TITI</div>
       </Button>
-    <Button value="Lionel" bgColor="grey" />
-    <Button value="Jean">Hello</Button>
-    <Button value="Louis" style={{backgroundColor:'red'}} bgColor="brown" />
+    <Button children="Lionel" bgColor="grey" />
+    <Button bgColor="grey">Hello</Button>
+    <Button children="Louis" style={{backgroundColor:'red'}} bgColor="brown" />
     <Button bgColor="brown" children={
       <>
       <div>HelloWorld1</div>
