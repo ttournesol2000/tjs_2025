@@ -6,10 +6,20 @@ const App=() => {
     <>
     <div>DEMAT Breizh</div>
     <Button value="Benjamin" style={{backgroundColor:'black'}} />
-    <Button value="Nicolas" />
+    <Button value="Nicolas">
+      <div>TOTO</div>
+      <div>TITI</div>
+      </Button>
     <Button value="Lionel" bgColor="grey" />
-    <Button value="Jean" />
-    <Button value="Louis" bgColor="brown" />
+    <Button value="Jean">Hello</Button>
+    <Button value="Louis" style={{backgroundColor:'red'}} bgColor="brown" />
+    <Button bgColor="brown" children={
+      <>
+      <div>HelloWorld1</div>
+      <div>HelloWorld2</div>
+      </>}>
+    </Button>
+
     </>
     
   )
