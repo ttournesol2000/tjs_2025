@@ -1,5 +1,7 @@
 import React from "react";
 import cmpstyle from "./Button.module.css";
+import { useEffect, useState } from "react";
+
 
 interface IButtonProps {
   style?: object;
@@ -8,6 +10,8 @@ interface IButtonProps {
   clickAction?: (unArg:string)=>void;
   children: string | React.ReactElement | Array<string | React.ReactElement>;
 }
+
+
 
 //const Button = ({String style,bgColor="grey",children,type="button"}:IButtonProps) => {
 const Button: React.FunctionComponent<IButtonProps> = ({
@@ -20,13 +24,28 @@ const Button: React.FunctionComponent<IButtonProps> = ({
   const buttonOnClick = (
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
+    setState(true)
     console.log(evt);
     //console.log(clickAction);
     if(clickAction)
     {
-      clickAction("bouton cliqué!")
+      clickAction("Button -- bouton cliqué!")
     }
   };
+
+  const [state, setState] = useState(false);
+
+  useEffect(() => {
+      return () => {
+        console.log('Button --  State updated:', state)
+      };
+    });
+
+    useEffect(() => {
+      return () => {
+        setTimeout(()=>{setState(false);},300);
+      };
+    },[state]);
 
   //console.trace(style);
   //console.log(props);
@@ -34,7 +53,7 @@ const Button: React.FunctionComponent<IButtonProps> = ({
   return (
     <button
       type={type}
-      className={cmpstyle.Button}
+      className={`${cmpstyle.Button}${state?' '+cmpstyle.clicked:''}`}
       style={{ backgroundColor: bgColor, ...style }}
       data-testid="Button"
       onClick={buttonOnClick}

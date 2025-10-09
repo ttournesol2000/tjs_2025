@@ -7,20 +7,20 @@ const App = () => {
 
   useEffect(() => {
     return () => {
-      console.log('all refresh mount and un mount')
+      console.log('App -- all refresh mount and un mount')
     };
   });
 
   useEffect(() => {
     return () => {
       setCounter(0);
-      console.log('fromEffect on Counter:', counter)
+      console.log('App -- fromEffect on Counter:', counter)
     };
   }, [counter]);
 
   useEffect(() => {
     return () => {
-      console.log('mount:')
+      console.log('App -- mount:')
     };
   }, []);
 

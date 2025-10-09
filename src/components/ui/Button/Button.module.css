@@ -13,3 +13,9 @@
     color:white;
     background-color: rgb(2, 133, 8);
 }
+
+.clicked {
+    background-color: rgb(108, 70, 212);
+    box-shadow: 15px 15px 15px rgb(230, 45, 45);
+    border: 5px solid grey;
+}
