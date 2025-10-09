@@ -11,7 +11,8 @@
     "test": "jest --watch",
     "genui": "npx generate-react-cli c --type=uicmp",
     "genly": "npx generate-react-cli c --type=lycmp",
-    "genfc": "npx generate-react-cli c --type=fccmp"
+    "genfc": "npx generate-react-cli c --type=fccmp",
+    "json": "json-server -p 5629 db/db.json"
   },
   "dependencies": {
     "orsys-tjs-meme": "^1.0.3",
@@ -19,6 +20,7 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "json-server": "0.17.4",
     "@eslint/js": "^9.36.0",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",

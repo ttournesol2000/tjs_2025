@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./MemeForm.module.css";
 import Button from '../../ui/Button/Button'
-const MemeForm = ({meme, onMemeChange}) => {
+const MemeForm = ({meme, onMemeChange, images }) => {
 
   const [current,setCurrent] = useState(meme);
 
@@ -40,8 +40,11 @@ const MemeForm = ({meme, onMemeChange}) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
+        <select name="imageId" id="imageId" value={current.imageId} onChange={onNbInputChange}>
           <option value="-1">No image</option>
+          {
+            images.map((img,i)=><option key={'option'+i} value={img.id}>{img.name}</option>)
+          }
         </select>
         <hr />
         <label htmlFor="text">
