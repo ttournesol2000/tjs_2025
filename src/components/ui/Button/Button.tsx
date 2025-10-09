@@ -3,7 +3,7 @@ import cmpstyle from "./Button.module.css";
 
 interface IButtonProps {
   style?: object;
-  bgColor: "tomato" | "brown" | "red" | "grey";
+  bgColor: "tomato" | "brown" | "red" | "grey"|"blue";
   type?: "button" | "reset" | "submit";
   clickAction?: (unArg:string)=>void;
   children: string | React.ReactElement | Array<string | React.ReactElement>;
@@ -21,8 +21,11 @@ const Button: React.FunctionComponent<IButtonProps> = ({
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     console.log(evt);
+    //console.log(clickAction);
     if(clickAction)
-      console.log("bouton cliqué!");
+    {
+      clickAction("bouton cliqué!")
+    }
   };
 
   //console.trace(style);
