@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "genui": "npx generate-react-cli c --type=uicmp",
+    "genly": "npx generate-react-cli c --type=lycmp",
+    "genfc": "npx generate-react-cli c --type=fccmp"
   },
   "dependencies": {
     "react": "^19.1.1",

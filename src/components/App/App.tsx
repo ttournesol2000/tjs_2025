@@ -1,54 +1,26 @@
 import "./App.css";
 import Button from "../ui/Button/Button";
 import { useEffect, useState } from "react";
+import FlexHGrow3 from "../layout/FlexHGrow3/FlexHGrow3";
+import Header from "../ui/Header/Header";
+import NavBar from "../ui/NavBar/NavBar";
+import FlexVGrow1 from "../layout/FlexVGrow1/FlexVGrow1";
+import MemeSVGViewer from "../ui/MemeSVGViewer/MemeSVGViewer";
+import Footer from "../ui/Footer/Footer";
+import MemeForm from "../functional/MemeForm/MemeForm";
+
 
 const App = () => {
-  const [counter, setCounter] = useState(-100);
-
-  useEffect(() => {
-    return () => {
-      console.log('App -- all refresh mount and un mount')
-    };
-  });
-
-  useEffect(() => {
-    return () => {
-      setCounter(0);
-      console.log('App -- fromEffect on Counter:', counter)
-    };
-  }, [counter]);
-
-  useEffect(() => {
-    return () => {
-      console.log('App -- mount:')
-    };
-  }, []);
-
   return (
-    <div>
-      <div>
-        <div style={{ textAlign: "center" }}>valeur du count:{counter}</div>
-      </div>
-      <hr />
-      <Button
-        bgColor="red"
-        clickAction={() => {
-          setCounter(counter - 1);
-          console.log(counter);
-        }}
-      >
-        -1
-      </Button>
-      <Button
-        bgColor="blue"
-        clickAction={() => {
-          setCounter(counter + 1);
-          //console.log(counter);
-        }}
-      >
-        +1
-      </Button>
-    </div>
+    <FlexHGrow3>
+    <Header/>
+    <NavBar/>
+    <FlexVGrow1>
+      <MemeSVGViewer/>
+      <MemeForm/>
+    </FlexVGrow1>
+    <Footer/>
+  </FlexHGrow3>
   );
 };
 
