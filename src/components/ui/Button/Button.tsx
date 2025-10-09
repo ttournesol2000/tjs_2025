@@ -22,7 +22,7 @@ const Button: React.FunctionComponent<IButtonProps> = ({
   ) => {
     console.log(evt);
     if(clickAction)
-      clickAction("bouton cliqué!");
+      console.log("bouton cliqué!");
   };
 
   //console.trace(style);

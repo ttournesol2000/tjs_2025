@@ -5,7 +5,7 @@ const App=() => {
   return (
     <>
     <div>DEMAT Breizh</div>
-    <Button children="Benjamin" style={{backgroundColor:'black'}} bgColor="red" />
+    <Button children="Benjamin" style={{backgroundColor:'black'}} bgColor="red" clickAction={(unarg)=>{console.trace("arg:"+ unarg)}}/>
     <Button bgColor="grey">
       <div>TOTO</div>
       <div>TITI</div>
