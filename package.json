@@ -14,6 +14,7 @@
     "genfc": "npx generate-react-cli c --type=fccmp"
   },
   "dependencies": {
+    "orsys-tjs-meme": "^1.0.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

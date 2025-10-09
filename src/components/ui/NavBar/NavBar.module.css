@@ -1,3 +1,9 @@
 .NavBar {
+    background-color: black;
+    height: 60px;
+}
 
+.NavBar.entry{
+    background-color: black;
+    height: 60px;
 }
