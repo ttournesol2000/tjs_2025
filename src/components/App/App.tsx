@@ -10,6 +10,10 @@ import { useEffect, useState } from "react";
 import store from "../../store/store";
 import {memes as rest_memes,images as rest_imgs} from '../../../db/db.json'
 import MemeSVGViewer from "../ui/MemeSVGViewer/MemeSVGViewer";
+import { Route, Routes } from "react-router";
+import Editor from "../../pages/Editor";
+import Home from "../../pages/Home";
+import Thumbnail from "../../pages/Thumbnail";
 
 const App = () => {
   return (
@@ -17,8 +21,11 @@ const App = () => {
     <Header/>
     <NavBar/>
     <FlexVGrow1>
-      <MemeSVGViewer basePath=""/>
-      <MemeForm />
+      <Routes>
+      <Route path="/" Component={Home} />
+      <Route path="/editor" element={<Editor />} />
+      <Route path="/thumbnails" element={<Thumbnail />} />
+      </Routes>
     </FlexVGrow1>
     <Footer/>
   </FlexHGrow3>
