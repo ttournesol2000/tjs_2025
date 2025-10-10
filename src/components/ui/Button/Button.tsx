@@ -1,6 +1,8 @@
 import React from "react";
 import cmpstyle from "./Button.module.css";
 import { useEffect, useState } from "react";
+import store from "../../../store/store";
+import { saveRessources } from "../../../store/asyncCaller";
 
 
 interface IButtonProps {
@@ -29,8 +31,7 @@ const Button: React.FunctionComponent<IButtonProps> = ({
     //console.log(clickAction);
     if(clickAction)
     {
-      clickAction("Button -- bouton cliqué!")
-    }
+      clickAction("Button -- bouton cliqué!")    }
   };
 
   const [state, setState] = useState(false);
@@ -44,6 +45,8 @@ const Button: React.FunctionComponent<IButtonProps> = ({
     useEffect(() => {
       return () => {
         setTimeout(()=>{setState(false);},300);
+/*         if(state==true)
+          store.dispatch(saveRessources(store.getState().current.meme)); */
       };
     },[state]);
 

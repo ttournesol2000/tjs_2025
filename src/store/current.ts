@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { emptyMeme, type MemeInterface } from 'orsys-tjs-meme';
+import { saveRessources } from './asyncCaller';
 
 const initialState = {
     meme: emptyMeme
@@ -15,7 +16,12 @@ const current = createSlice({
     clear:(state)=>{
         state.meme=emptyMeme;
     }
-  }
+  },
+  extraReducers:(builder)=>{
+      builder.addCase(saveRessources.fulfilled, (s,a) => {
+         console.log("save done");
+      })
+    }
 });
 
 export const {update,clear} = current.actions
